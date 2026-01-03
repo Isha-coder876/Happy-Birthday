@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laiba Malik | Birthday Celebration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+  <audio id="bday-music" src="birthday.mp3" loop></audio>
+
+  <div id="overlay">
+    <h1 id="start-btn">Let's start the celebration 🎉</h1>
+  </div>
+
+  <header id="main-nav" style="display: none;">
+    <div class="brand-name">Laiba Malik</div>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#memories">Memories</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#wishes">Wishes</a></li>
+      <li><a href="#surprise">Surprise</a></li>
+    </ul>
+  </header>
+
+  <section id="home" class="hero-section" style="display: none;">
+    <div class="glow-bg">
+      <div class="ball ball1"></div>
+      <div class="ball ball2"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="glass-card">
+        <span class="pre-title">Exclusive Celebration</span>
+        <h1 class="main-wish">
+          <span id="typing-text"></span><br>
+          <span class="highlight">Laiba Malik</span>
+        </h1>
+        <p class="tagline">A day as special as you are. ✨</p>
+        <div class="btn-group">
+          <a href="#memories" class="cta-button">Explore Memories</a>
+          <a href="#surprise" class="cta-button">The Surprise</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="memories" class="memories-section">
+    <div class="section-header">
+      <h2 class="section-title">Sweet Memories</h2>
+      <p class="section-subtitle">A collection of your most beautiful moments.</p>
+    </div>
+
+    <div class="memories-container">
+      <div class="memory-card-wrapper">
+        <div class="memory-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img1.jfif" alt="Memory One">
+            </div>
+            <div class="card-back">
+              <h3>Grace & Elegance</h3>
+              <p>Aapki shakhsiyat ki chamak is puri website ko roshan kar rahi hai. ✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="memory-card-wrapper">
+        <div class="memory-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img2.jfif" alt="Memory Two">
+            </div>
+            <div class="card-back">
+              <h3>Simply Radiant</h3>
+              <p>Aapki muskurahat sabse pyari hai, hamesha aise hi hansti rahein. 😊</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="memory-card-wrapper">
+        <div class="memory-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img3.jfif" alt="Memory Three">
+            </div>
+            <div class="card-back">
+              <h3>The Birthday Queen</h3>
+              <p>Wishing the most amazing person a day as beautiful as her soul. ❤️</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="section-header">
+      <h2 class="section-title">Photo Gallery</h2>
+      <p class="section-subtitle">Every picture tells a story of elegance and grace.</p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item"><img src="img/p1.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p2.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p3.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p4.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p5.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p6.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p7.jfif" alt="Laiba"></div>
+      <div class="gallery-item"><img src="img/p8.jfif" alt="Laiba"></div>
+
+      <div class="gallery-item hidden-item"><img src="img/p9.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p10.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p11.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p12.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p13.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p14.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p15.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p16.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p17.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p18.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p19.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p20.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p21.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p22.jfif" alt="Laiba"></div>
+      <div class="gallery-item hidden-item"><img src="img/p23.jfif" alt="Laiba"></div>
+    </div>
+
+    <div class="view-more-container">
+      <button id="viewMoreBtn" class="cta-button">View All Photos</button>
+    </div>
+  </section>
+
+  <section id="wishes" class="wishes-section">
+    <div class="section-header">
+      <h2 class="section-title">Heartfelt Wishes</h2>
+      <p class="section-subtitle">A few words for someone truly special.</p>
+    </div>
+
+    <div class="wishes-container">
+      <div class="wish-card">
+        <div class="wish-icon">✨</div>
+        <p>"May your day be as bright as your smile and as lovely as your soul. Happy Birthday, Laiba!"</p>
+        <div class="wish-sender">- From Your Bestie</div>
+      </div>
+
+      <div class="wish-card">
+        <div class="wish-icon">🌸</div>
+        <p>"Wishing you a year filled with love, laughter, and endless success. You deserve the world!"</p>
+        <div class="wish-sender">- Always Yours</div>
+      </div>
+
+      <div class="wish-card">
+        <div class="wish-icon">🎂</div>
+        <p>"To the most elegant person I know, may this birthday bring you as much joy as you give to everyone."
+        </p>
+        <div class="wish-sender">- Someone Special</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="surprise" class="surprise-section">
+    <div class="section-header">
+      <h2 class="section-title">The Surprise</h2>
+      <p class="section-subtitle">Make a wish and blow out the candles!</p>
+    </div>
+
+    <div class="cake-container">
+      <div class="cake-topper" id="main-topper">Happy Birthday Laiba</div>
+
+      <div class="cake" id="interactive-cake">
+        <div class="plate"></div>
+
+        <div class="layer layer-bottom">
+          <div class="toppings">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="candy"></span><span class="candy"></span>
+          </div>
+        </div>
+
+        <div class="layer layer-middle">
+          <div class="toppings">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="candy"></span>
+          </div>
+        </div>
+
+        <div class="layer layer-top">
+          <div class="toppings">
+            <span class="dot"></span><span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="surprise-msg" class="surprise-text" style="display: none;">
+      <h3 class="highlight">Make A Wish, Laiba! ✨</h3>
+      <p>May all your dreams come true this year.</p>
+    </div>
+    <br>
+
+    <footer class="birthday-footer">
+      <div class="final-message">
+        <h2 class="highlight">A Final Note...</h2>
+        <p>"May your life be as colorful as the cake, as bright as the neon lights, and as sweet as our
+          memories. Keep shining!"</p>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider-wrapper">
+          <hr class="footer-line">
+          <div class="floating-emojis">
+            <span>✨</span><span>🎈</span><span>❤️</span><span>🎈</span><span>✨</span>
+          </div>
+        </div>
+
+        <div class="footer-content-grid">
+          <div class="footer-left">
+            <p class="copyright">&copy; 2025 Special Edition</p>
+          </div>
+
+          <div class="footer-center">
+            <p>Created for <span class="highlight-name">Laiba Malik</span></p>
+          </div>
+
+          <div class="footer-right">
+            <p class="dev-credit">Crafted with ❤️ by <span class="my-name">Isha Malik</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </section>
+
+</body>
+
+</html>

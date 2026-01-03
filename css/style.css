@@ -1,0 +1,874 @@
+/* --- Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* --- Overlay Styling --- */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: 0.8s ease;
+  cursor: pointer;
+}
+
+#start-btn {
+  font-family: 'Righteous';
+  color: #00f2ff;
+  font-size: 2.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* --- Navbar --- */
+header {
+  width: 100%;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand-name {
+  font-family: 'Righteous', cursive;
+  font-size: 30px;
+  color: #00f2ff;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  position: relative;
+}
+
+.nav-menu li a:hover {
+  color: #00f2ff;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00f2ff;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  padding: 60px 40px;
+  border-radius: 40px;
+  text-align: center;
+  max-width: 750px;
+  width: 90%;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+}
+
+.main-wish {
+  font-family: 'Righteous';
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #00f2ff;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+}
+
+.btn-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+.cta-button {
+  padding: 14px 30px;
+  background: #00f2ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.cta-button:hover {
+  background: #fff;
+  transform: translateY(-5px);
+}
+
+/* Background Glows */
+
+.glow-bg .ball {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  background: #00f2ff;
+  z-index: 1;
+}
+
+.ball1 {
+  width: 300px;
+  height: 300px;
+  top: 15%;
+  left: 5%;
+}
+
+.ball2 {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 5%;
+  background: #0077ff;
+}
+
+/* --- Memories Section --- */
+.memories-section {
+  padding: 100px 5%;
+  background-color: #000;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 70px;
+}
+
+.section-title {
+  font-family: 'Righteous', cursive;
+  font-size: 3.5rem;
+  color: #00f2ff;
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.memories-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Floating & 3D Effect */
+.memory-card-wrapper {
+  width: 280px;
+  height: 380px;
+  perspective: 1000px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.memory-card-wrapper:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.memory-card-wrapper:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.memory-card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.memory-card-wrapper:hover .memory-card {
+  transform: rotateY(180deg);
+}
+
+.card-inner,
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.card-front {
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  overflow: hidden;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fix for Card Back Visibility */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.memory-card-wrapper:hover .memory-card {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  /* Yeh important hai */
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  overflow: hidden;
+}
+
+.card-back {
+  /* Background ko thoda aur solid kiya hai taake text nazar aaye */
+  background: rgba(0, 10, 20, 0.95);
+  border: 2px solid #00f2ff;
+  transform: rotateY(180deg);
+  padding: 25px;
+  text-align: center;
+  z-index: 1;
+}
+
+.card-back h3 {
+  font-family: 'Righteous';
+  color: #00f2ff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  /* Text Shadow taake glow kare */
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.card-back p {
+  color: #ffffff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  /* Text ko highlight karne ke liye */
+  /* Pure white for better contrast */
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+/* --- Gallery Section (FIXED ALIGNMENT) --- */
+.gallery-section {
+  padding: 80px 8%;
+  background-color: #000;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Mobile ke liye columns kam kar dein */
+@media (max-width: 900px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+.gallery-item {
+  flex: 1 1 calc(25% - 15px);
+  /* 4 pics per row */
+  min-width: 200px;
+  height: 300px;
+  /* Fixed height for bottom alignment */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 242, 255, 0.1);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Prevents stretching */
+  transition: 0.5s;
+  filter: brightness(0.9);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.gallery-item:hover {
+  border-color: #00f2ff;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+/* Lightbox Styling */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 5000;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.lightbox-content img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 10px;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+}
+
+/* --- Hidden Items Toggle --- */
+.hidden-item {
+  display: none !important;
+  /* Always hidden by default */
+}
+
+/* Shown only when .expanded class is on the grid */
+.galleryGrid.expanded .hidden-item,
+#galleryGrid.expanded .hidden-item {
+  display: block !important;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-more-container {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* --- Lightbox --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 5000;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  border: 2px solid #00f2ff;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 15px);
+  }
+
+  /* 2 pics per row on mobile */
+  .main-wish {
+    font-size: 2.5rem;
+  }
+}
+
+/* Wishes Section Styling */
+.wishes-section {
+  padding: 100px 8%;
+  background: linear-gradient(to bottom, #000, #050505);
+}
+
+.wishes-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.wish-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 350px;
+  flex: 1 1 300px;
+  transition: 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.wish-card:hover {
+  transform: translateY(-10px);
+  border-color: #00f2ff;
+  box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wish-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.wish-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.wish-sender {
+  color: #00f2ff;
+  font-weight: 600;
+  font-family: 'Righteous', cursive;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .wishes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Surprise Section */
+/* --- Surprise Section Styling --- */
+.surprise-section {
+  padding: 100px 8%;
+  background: #000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+  /* Thori height barha di taake topper ko jagah mile */
+  margin-top: -20px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* Cake Topper - Candle sy kafi upar */
+.cake-topper {
+  position: absolute;
+  top: 0px;
+  /* Isay top container ke bilkul shuru mein rakha hai */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Righteous', cursive;
+  color: #00f2ff;
+  font-size: 28px;
+  text-shadow: 0 0 15px #00f2ff, 0 0 30px rgba(0, 242, 255, 0.5);
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.cake {
+  position: relative;
+  width: 250px;
+  z-index: 10;
+  bottom: 20px;
+  transition: all 1.5s ease-in-out;
+  /* Smooth movement ke liye */
+}
+
+/* --- Cake Lift Animation (JS trigger karega) --- */
+.cake-lift-up {
+  animation: liftAndFloat 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes liftAndFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
+
+  /* Cake itna upar uthega */
+}
+
+/* Plate with Glow */
+.plate {
+  width: 320px;
+  height: 20px;
+  background: linear-gradient(to right, #000, #333, #000);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+  left: -35px;
+  box-shadow: 0 10px 25px rgba(0, 242, 255, 0.2);
+  z-index: 1;
+}
+
+/* Cake Layers */
+.layer {
+  position: absolute;
+  width: 200px;
+  border-radius: 15px 15px 5px 5px;
+  background: repeating-linear-gradient(90deg, #1a0f0a, #1a0f0a 20px, #23150f 20px, #23150f 40px);
+  border: 1px solid rgba(0, 242, 255, 0.15);
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.layer-bottom {
+  height: 80px;
+  bottom: 0;
+  width: 240px;
+  left: -20px;
+  z-index: 2;
+}
+
+.layer-middle {
+  height: 70px;
+  bottom: 80px;
+  width: 180px;
+  left: 10px;
+  z-index: 3;
+}
+
+.layer-top {
+  height: 60px;
+  bottom: 150px;
+  width: 130px;
+  left: 35px;
+  z-index: 4;
+}
+
+/* Chocolate Drip & Neon Icing */
+.layer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: #2c1a12;
+  border-radius: 10px 10px 50% 50%;
+  z-index: 6;
+}
+
+.layer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: #00f2ff;
+  border-radius: 15px 15px 10px 10px;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.7);
+  filter: blur(1px);
+  z-index: 8;
+}
+
+/* Toppings */
+.toppings {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dot:nth-child(1) {
+  top: 30px;
+  left: 20%;
+  background: #ffea00;
+}
+
+.dot:nth-child(2) {
+  top: 45px;
+  left: 50%;
+  background: #00f2ff;
+}
+
+.dot:nth-child(3) {
+  top: 25px;
+  left: 80%;
+  background: #ff0077;
+}
+
+.candy {
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #ff5500;
+  border-radius: 4px;
+  transform: rotate(15deg);
+}
+
+/* Candle & Flame */
+.candle {
+  position: absolute;
+  width: 14px;
+  height: 50px;
+  background: repeating-linear-gradient(45deg, #fff, #fff 7px, #00f2ff 7px, #00f2ff 14px);
+  bottom: 210px;
+  left: 93px;
+  border-radius: 5px;
+  z-index: 15;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+.flame {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: radial-gradient(circle at 50% 100%, #ffffff 10%, #ffea00 40%, #ff9d00 80%);
+  border-radius: 50% 50% 20% 20%;
+  top: -35px;
+  left: -3px;
+  box-shadow: 0 0 20px #ff9d00, 0 0 60px rgba(255, 157, 0, 0.4);
+  animation: magic-flicker 0.4s infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes magic-flicker {
+  0% {
+    transform: scale(1) rotate(-1deg);
+  }
+
+  100% {
+    transform: scale(1.15) rotate(1deg);
+  }
+}
+
+/* Surprise Wish Message Styling */
+.surprise-text {
+  margin-top: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.surprise-text.reveal-msg {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Final Footer Styling --- */
+.birthday-footer {
+  padding: 60px 5% 30px 5%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.final-message {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.final-message h2 {
+  font-family: 'Righteous', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.final-message p {
+  font-size: 1.2rem;
+  color: #bbb;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* Divider with Emojis on top */
+.divider-wrapper {
+  position: relative;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-line {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 242, 255, 0.5), transparent);
+}
+
+.floating-emojis {
+  position: absolute;
+  background: #000;
+  /* Taake line emojis ke piche se na guzre */
+  padding: 0 20px;
+  font-size: 20px;
+  letter-spacing: 10px;
+}
+
+/* 3-Column Grid like professional sites */
+.footer-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-left p,
+.footer-right p,
+.footer-center p {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+
+.highlight-name {
+  color: #00f2ff;
+  font-weight: 500;
+}
+
+.my-name {
+  color: #00f2ff;
+  font-family: 'Righteous', cursive;
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer-content-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
